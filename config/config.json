@@ -1,0 +1,17 @@
+{
+  "mode": "debug",
+  "server": {
+    "address": ":8181"
+  },
+  "context": {
+    "timeout": 2
+  },
+  "database": {
+    "host": "localhost",
+    "port": "3306",
+    "user": "napouser",
+    "pass": "napouser",
+    "name": "db_test_kitabisa"
+  },
+  "reqToken": "ThWmZq3t6w9z$C&F)J@NcRfUjXn2r5u7"
+}
