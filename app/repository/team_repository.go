@@ -17,7 +17,7 @@ func (instance *TeamRepository) Create(param *param.TeamCreateParameter) (tx *go
 	return
 }
 
-func (instance *TeamRepository) GetById(id int) (result []*entities.TeamEntity, err error) {
+func (instance *TeamRepository) GetById(id int) (result entities.TeamEntity, err error) {
 	err = instance.Db.
 		Preload("Players").
 		Where("id=?", id).

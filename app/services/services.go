@@ -7,7 +7,7 @@ import (
 
 type TeamServices interface {
 	GetAll() (result []*entities.TeamEntity, err error)
-	GetById(teamId int) (result []*entities.TeamEntity, err error)
+	GetById(teamId int) (result entities.TeamEntity, err error)
 	Create(param *param.TeamCreateParameter) (err error)
 }
 

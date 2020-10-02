@@ -8,7 +8,7 @@ import (
 
 type TeamRepositories interface {
 	GetAll() (result []*entities.TeamEntity, err error)
-	GetById(teamId int) (result []*entities.TeamEntity, err error)
+	GetById(teamId int) (result entities.TeamEntity, err error)
 	Create(param *param.TeamCreateParameter) (tx *gorm.DB, err error)
 }
 

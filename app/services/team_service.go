@@ -38,7 +38,7 @@ func (instance *TeamService) Create(param *param.TeamCreateParameter) (err error
 	return
 }
 
-func (instance *TeamService) GetById(id int) (result []*entities.TeamEntity, err error) {
+func (instance *TeamService) GetById(id int) (result entities.TeamEntity, err error) {
 	result, err = instance.Repo.TeamRepositories.GetById(id)
 	return
 }
