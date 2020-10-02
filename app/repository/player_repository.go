@@ -9,6 +9,19 @@ type PlayerRepository struct {
 	Db *gorm.DB
 }
 
+func (instance *PlayerRepository) Create(param []*entities.PlayerEntity) (tx *gorm.DB, err error) {
+	tx = instance.Db.Begin()
+
+	for i := range param {
+		err = tx.Create(&param[i]).Error
+		if err != nil {
+			break
+		}
+	}
+
+	return
+}
+
 func (instance *PlayerRepository) GetAll() (result []*entities.PlayerEntity, err error) {
 	err = instance.Db.
 		Preload("Team").

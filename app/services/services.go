@@ -1,10 +1,14 @@
 package services
 
-import "app/app/entities"
+import (
+	"app/app/apis/param"
+	"app/app/entities"
+)
 
 type TeamServices interface {
 	GetAll() (result []*entities.TeamEntity, err error)
 	GetById(teamId int) (result []*entities.TeamEntity, err error)
+	Create(param *param.TeamCreateParameter) (err error)
 }
 
 type PlayerServices interface {

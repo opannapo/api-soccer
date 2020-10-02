@@ -1,12 +1,20 @@
 package repository
 
 import (
+	"app/app/apis/param"
 	"app/app/entities"
 	"github.com/jinzhu/gorm"
 )
 
 type TeamRepository struct {
 	Db *gorm.DB
+}
+
+func (instance *TeamRepository) Create(param *param.TeamCreateParameter) (tx *gorm.DB, err error) {
+	data := param.Team
+	tx = instance.Db.Begin()
+	err = tx.Create(data).Error
+	return
 }
 
 func (instance *TeamRepository) GetById(id int) (result []*entities.TeamEntity, err error) {
