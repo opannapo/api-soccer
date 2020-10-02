@@ -29,6 +29,7 @@ func SetupRoute(services *servicesinjection.ServiceInjection) {
 	v1 := router.Group("api/v1")
 	{
 		endpoints.NewIndexEndpoint(v1)
+		endpoints.NewInstanceTeamEndpoint(v1, services)
 	}
 
 	_ = router.Run(viper.GetString("server.address"))

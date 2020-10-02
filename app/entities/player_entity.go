@@ -2,7 +2,7 @@ package entities
 
 type PlayerEntity struct {
 	ID        int64         `gorm:"primary_key"  json:"id"`
-	Name      int64         `json:"name"`
+	Name      string        `json:"name"`
 	Age       int64         `json:"age"`
 	JoinDate  int64         `json:"join_date"`
 	CreatedAt int64         `json:"created_at"`

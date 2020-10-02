@@ -1,6 +1,9 @@
 package repositoryinjection
 
-import "github.com/jinzhu/gorm"
+import (
+	"app/app/repository"
+	"github.com/jinzhu/gorm"
+)
 
 type RepositoryInjection struct {
 	*mysqlRepoInjected
@@ -8,11 +11,17 @@ type RepositoryInjection struct {
 }
 
 type mysqlRepoInjected struct {
+	TeamRepositories repository.TeamRepositories
 }
 
 //NewInstanceRepositoryInjection new instance of RepositoryInjection struct
 func NewInstanceRepositoryInjection(db *gorm.DB) *RepositoryInjection {
+	msql := mysqlRepoInjected{
+		TeamRepositories: repository.NewInstanceTeamRepository(db),
+	}
+
 	return &RepositoryInjection{
-		db: db,
+		db:                db,
+		mysqlRepoInjected: &msql,
 	}
 }

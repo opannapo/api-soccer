@@ -1,6 +1,9 @@
 package servicesinjection
 
-import "app/app/injection/repositoryinjection"
+import (
+	"app/app/injection/repositoryinjection"
+	"app/app/services"
+)
 
 //ServiceInjection struct
 type ServiceInjection struct {
@@ -9,14 +12,17 @@ type ServiceInjection struct {
 }
 
 type servicesInjected struct {
+	TeamService services.TeamServices
 }
 
 //NewInstanceServiceInjection new instance of ServiceInjection, & generate all services Instance
 func NewInstanceServiceInjection(repository *repositoryinjection.RepositoryInjection) *ServiceInjection {
-	ms := servicesInjected{}
+	service := servicesInjected{
+		TeamService: services.NewInstanceTimeService(repository),
+	}
 
 	return &ServiceInjection{
-		servicesInjected: &ms,
+		servicesInjected: &service,
 		repository:       repository,
 	}
 }
