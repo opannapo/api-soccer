@@ -1,6 +1,9 @@
-package api_soccer
+package main
 
 import (
+	"app/app"
+	"app/app/injection/repositoryinjection"
+	"app/app/injection/servicesinjection"
 	"fmt"
 	"log"
 	"os"
@@ -71,5 +74,14 @@ func cmdH() {
 }
 
 func cmdStart(evn string) {
+	app.SetupConfig(evn)
 
+	db := app.SetupDbConnection()
+	defer db.Close()
+
+	//Inject Dependency for All Repository & Services
+	repository := repositoryinjection.NewInstanceRepositoryInjection(db)
+	services := servicesinjection.NewInstanceServiceInjection(repository)
+
+	app.SetupRoute(services)
 }
