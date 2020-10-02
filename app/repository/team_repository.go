@@ -9,13 +9,21 @@ type TeamRepository struct {
 	Db *gorm.DB
 }
 
-func (instance *TeamRepository) GetAll() (result []*entities.TeamEntity, err error) {
-	err = instance.Db.Preload("Players").Find(&result).Error
+func (instance *TeamRepository) GetById(id int) (result []*entities.TeamEntity, err error) {
+	err = instance.Db.
+		Preload("Players").
+		Where("id=?", id).
+		First(&result).
+		Error
+
 	return
 }
 
-func (instance *TeamRepository) GetOne(id int) (result entities.TeamEntity, err error) {
-	panic("implement me")
+func (instance *TeamRepository) GetAll() (result []*entities.TeamEntity, err error) {
+	err = instance.Db.
+		Find(&result).
+		Error
+	return
 }
 
 func NewInstanceTeamRepository(db *gorm.DB) TeamRepositories {

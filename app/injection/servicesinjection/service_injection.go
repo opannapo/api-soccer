@@ -12,13 +12,15 @@ type ServiceInjection struct {
 }
 
 type servicesInjected struct {
-	TeamService services.TeamServices
+	TeamService   services.TeamServices
+	PlayerService services.PlayerServices
 }
 
 //NewInstanceServiceInjection new instance of ServiceInjection, & generate all services Instance
 func NewInstanceServiceInjection(repository *repositoryinjection.RepositoryInjection) *ServiceInjection {
 	service := servicesInjected{
-		TeamService: services.NewInstanceTimeService(repository),
+		TeamService:   services.NewInstanceTimeService(repository),
+		PlayerService: services.NewInstancePlayerService(repository),
 	}
 
 	return &ServiceInjection{

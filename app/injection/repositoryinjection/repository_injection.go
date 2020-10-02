@@ -11,13 +11,15 @@ type RepositoryInjection struct {
 }
 
 type mysqlRepoInjected struct {
-	TeamRepositories repository.TeamRepositories
+	TeamRepositories   repository.TeamRepositories
+	PlayerRepositories repository.PlayerRepositories
 }
 
 //NewInstanceRepositoryInjection new instance of RepositoryInjection struct
 func NewInstanceRepositoryInjection(db *gorm.DB) *RepositoryInjection {
 	msql := mysqlRepoInjected{
-		TeamRepositories: repository.NewInstanceTeamRepository(db),
+		TeamRepositories:   repository.NewInstanceTeamRepository(db),
+		PlayerRepositories: repository.NewInstancePlayerRepository(db),
 	}
 
 	return &RepositoryInjection{
