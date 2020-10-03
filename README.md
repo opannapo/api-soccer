@@ -1,5 +1,4 @@
-# api-soccer
-Api Soccer - Test
+# api-soccer 
 
 ### Point's
 | K | V
@@ -12,9 +11,7 @@ Api Soccer - Test
 | Viper | App Configuration 
 | Testify | Test
 
-
-
-
+#
 ### Project Structure
 ```
 -root project
@@ -36,7 +33,7 @@ Api Soccer - Test
    └ services           » Enterprise Business Rules
 ```
 
-
+#
 ### Tools Arguments
 | Arguments | Description | Ex
 | ------  | ------ | ------ | 
