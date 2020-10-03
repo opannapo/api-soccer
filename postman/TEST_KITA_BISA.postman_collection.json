@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "6cf6f7b6-1cef-4bea-a66e-2f5b961fb10d",
+		"name": "TEST_KITA_BISA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "reqToken",
+						"type": "text",
+						"value": "ABCs"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "reqToken",
+						"type": "text",
+						"value": "ABCs"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/teams",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team Detail - By Team Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "reqToken",
+						"value": "ABCs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/team/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Player - All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "reqToken",
+						"type": "text",
+						"value": "ABCs"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/players",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Player - Of Teams - (Param : TeamId)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "reqToken",
+						"type": "text",
+						"value": "ABCs"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/players/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"players",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Player - Detail (param : palayer id)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "reqToken",
+						"type": "text",
+						"value": "ABCs"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/player/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"player",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "reqToken",
+						"type": "text",
+						"value": "ABCs"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"team\": { \n        \"name\": \"test1\",\n        \"address\": \"JALANJALAN\",\n        \"created_at\": 1601635756,\n        \"updated_at\": 1601635756\n    },\n    \"players\": [\n        { \n            \"name\": \"OPAN1\",\n            \"age\": 32,\n            \"join_date\": 1601635756,\n            \"created_at\": 1601635756,\n            \"updated_at\": 1601635756,\n            \"team_id\": 1\n        },\n        { \n            \"name\": \"OPAN2\",\n            \"age\": 32,\n            \"join_date\": 1601635756,\n            \"created_at\": 1601635756,\n            \"updated_at\": 1601635756,\n            \"team_id\": 1\n        },\n        { \n            \"name\": \"OPAN15\",\n            \"age\": 32,\n            \"join_date\": 1601635756,\n            \"created_at\": 1601635756,\n            \"updated_at\": 1601635756,\n            \"team_id\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/team/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"team",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Create (SIMULASI ERROR & TRANSACTIONAL)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "reqToken",
+						"type": "text",
+						"value": "ABCs"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"team\": {\n        \"id\": 1,\n        \"name\": \"test1\",\n        \"address\": \"JALANJALAN\",\n        \"created_at\": 1601635756,\n        \"updated_at\": 1601635756\n    },\n    \"players\": [\n        {\n            \"id\": 100,\n            \"name\": \"OPAN1\",\n            \"age\": 32,\n            \"join_date\": 1601635756,\n            \"created_at\": 1601635756,\n            \"updated_at\": 1601635756,\n            \"team_id\": 1\n        },\n        {\n            \"id\": 200,\n            \"name\": \"OPAN2\",\n            \"age\": 32,\n            \"join_date\": 1601635756,\n            \"created_at\": 1601635756,\n            \"updated_at\": 1601635756,\n            \"team_id\": 1\n        },\n        {\n            \"id\": 300,\n            \"name\": \"OPAN15\",\n            \"age\": 32,\n            \"join_date\": 1601635756,\n            \"created_at\": 1601635756,\n            \"updated_at\": 1601635756,\n            \"team_id\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/team/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"team",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
