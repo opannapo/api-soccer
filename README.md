@@ -53,11 +53,11 @@
 #
 ### API Endpoint's
 ```
-GET    /api/v1/                  --> app/app/apis/endpoints.home
-GET    /api/v1/teams             --> app/app/apis/endpoints.(*TeamEndpoint).getAll
-GET    /api/v1/team/:id          --> app/app/apis/endpoints.(*TeamEndpoint).getById
-POST   /api/v1/team/create       --> app/app/apis/endpoints.(*TeamEndpoint).create
-GET    /api/v1/players           --> app/app/apis/endpoints.(*PlayerEndpoint).getAll
-GET    /api/v1/players/:id       --> app/app/apis/endpoints.(*PlayerEndpoint).getByTeam
-GET    /api/v1/player/:id        --> app/app/apis/endpoints.(*PlayerEndpoint).getById
+GET    /api/v1/                  » app/app/apis/endpoints.home                          » Home / Base informations
+GET    /api/v1/teams             » app/app/apis/endpoints.(*TeamEndpoint).getAll        » Get all teams
+GET    /api/v1/team/:id          » app/app/apis/endpoints.(*TeamEndpoint).getById       » Get team by id
+POST   /api/v1/team/create       » app/app/apis/endpoints.(*TeamEndpoint).create        » Create Team with Players (Body JSON)
+GET    /api/v1/players           » app/app/apis/endpoints.(*PlayerEndpoint).getAll      » Get all player
+GET    /api/v1/players/:id       » app/app/apis/endpoints.(*PlayerEndpoint).getByTeam   » Get Player by Team ID
+GET    /api/v1/player/:id        » app/app/apis/endpoints.(*PlayerEndpoint).getById     » Get Player by Player ID
 ```
