@@ -46,3 +46,18 @@
 |  -local | Local   |  go run main.go -start
 |  -dev | Development | go run main.go -start dev
 |  -prod | Production | go run main.go -start prod
+
+
+
+
+#
+### API Endpoint's
+```
+GET    /api/v1/                  --> app/app/apis/endpoints.home
+GET    /api/v1/teams             --> app/app/apis/endpoints.(*TeamEndpoint).getAll
+GET    /api/v1/team/:id          --> app/app/apis/endpoints.(*TeamEndpoint).getById
+POST   /api/v1/team/create       --> app/app/apis/endpoints.(*TeamEndpoint).create
+GET    /api/v1/players           --> app/app/apis/endpoints.(*PlayerEndpoint).getAll
+GET    /api/v1/players/:id       --> app/app/apis/endpoints.(*PlayerEndpoint).getByTeam
+GET    /api/v1/player/:id        --> app/app/apis/endpoints.(*PlayerEndpoint).getById
+```
