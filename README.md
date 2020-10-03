@@ -17,20 +17,20 @@ Api Soccer - Test
 ## Project Structure
 ```
 -root project
-     └ app 			 	       » Application Project
-     └ config 				   » Configuration Files (JSON)
-     └ db 				       » Migration Script
-     └ test              » Test
+     └ app              » Application Project
+     └ config           » Configuration Files (JSON)
+     └ db               » Migration Script
+     └ test             » Test
 
 
-- app 					         » Application Project 
-   └ apis 		 		       » Application Layer / Application Business Rules
-       └ endpoints       » Request-Response Controller  
-       └ param           » Request Parameter
-   └ entities 			     » Domain Layer
-   └ injection			     » Manual Dependency Injection
-       └ repositories    » Repository types
-       └ services 			 » Service types
-   └ repository				   » Data Layer 
-   └ services				     » Enterprise Business Rules
+- app                   » Application Project 
+   └ apis               » Application Layer / Application Business Rules
+       └ endpoints      » Request-Response Controller  
+       └ param          » Request Parameter
+   └ entities           » Domain Layer
+   └ injection          » Manual Dependency Injection
+       └ repositories   » Repository types
+       └ services       » Service types
+   └ repository         » Data Layer 
+   └ services           » Enterprise Business Rules
 ```
