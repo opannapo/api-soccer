@@ -1,7 +1,7 @@
 # api-soccer
 Api Soccer - Test
 
-###Point's
+### Point's
 | K | V
 | ------ | ------ | 
 | Project Structure | Package, Manual DI, Etc 
@@ -35,3 +35,16 @@ Api Soccer - Test
    └ repository         » Data Layer 
    └ services           » Enterprise Business Rules
 ```
+
+
+### Tools Arguments
+| Arguments | Description | Ex
+| ------  | ------ | ------ | 
+|  -h     | Help   |  go run main.go -h
+|  -start | Starting with default environment (local)   |  go run main.go -start
+|  -start <env> | Starting selected environment |  go run main.go -start dev
+| Environment | Description | Ex
+| ------  | ------ | ------ | 
+|  -local | Local   |  go run main.go -start
+|  -dev | Development | go run main.go -start dev
+|  -prod | Production | go run main.go -start prod
