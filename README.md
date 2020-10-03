@@ -42,7 +42,8 @@ Api Soccer - Test
 | ------  | ------ | ------ | 
 |  -h     | Help   |  go run main.go -h
 |  -start | Starting with default environment (local)   |  go run main.go -start
-|  -start <env> | Starting selected environment |  go run main.go -start dev
+|  -start env | Starting selected environment |  go run main.go -start dev
+
 | Environment | Description | Ex
 | ------  | ------ | ------ | 
 |  -local | Local   |  go run main.go -start
