@@ -65,7 +65,10 @@ GET    /api/v1/player/:id     » app/app/apis/endpoints.(*PlayerEndpoint).getByI
 
 #
 ### Database
+```$xslt
 DB Migration location at projectroot/db/migration/000001_init_schema.up.sql
+```
+
 ```
 CREATE TABLE IF NOT EXISTS `tbl_team`
 (
@@ -95,4 +98,10 @@ CREATE TABLE IF NOT EXISTS `tbl_player`
 
 CREATE INDEX tbl_player_team_id_IDX USING BTREE ON db_test_kitabisa.tbl_player (team_id);
 
+```
+
+#
+### Postman
+```$xslt
+Postman Collection location at projectroot/postman/TEST_KITA_BISA.postman_collection.json
 ```
